@@ -1,0 +1,673 @@
+<?php   include_once('./includes/headerNav.php'); ?>
+<div class="overlay" data-overlay></div>
+<!--
+    - HEADER
+  -->
+<header>
+  <!-- top head action, search etc in php -->
+  <!-- inc/topheadactions.php -->
+  <?php require_once './includes/topheadactions.php'; ?>
+    <style>
+        * {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+
+}
+:root{
+    --main-maroon: #CE5959;
+    --deep-maroon: #89375F;
+}
+
+.appointments-section {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+.appointment-heading {
+    text-align: center;
+}
+
+.appointment-head {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: var( --main-maroon);
+}
+
+.appointment-line {
+    width: 160px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var( --main-maroon);
+    display: inline-block;
+}
+
+.edit-detail-field .child-detail-inner {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Add-child-section {
+    margin-top: 40px;
+}
+
+.Add-child-section .child-heading-t {
+    font-size: 25px;
+    font-weight: 700;
+    color: var( --main-maroon);
+}
+
+.Add-child-section .child-fields1 {
+    width: 49%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+}
+
+.Add-child-section .child-fields1 input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    background-color: transparent;
+}
+
+.Add-child-section .child-fields1::before {
+    position: absolute;
+    content: "First Name";
+    top: -10px;
+    background-image: linear-gradient(#FFFCF6, #FFFFFF);
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var( --main-maroon);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Add-child-section .child-fields1 input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    background-color: transparent;
+}
+
+.Add-child-section .child-fields3 {
+    width: 49%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+}
+
+.Add-child-section .child-fields3 input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    background-color: transparent;
+}
+
+.Add-child-section .child-fields3::before {
+    position: absolute;
+    content: "Last Name";
+    top: -10px;
+    background-image: linear-gradient(#FFFCF6, #FFFFFF);
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var( --main-maroon);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Add-child-section .child-fields4 {
+    width: 49%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+}
+
+.Add-child-section .child-fields4::before {
+    position: absolute;
+    content: "House Number or Name";
+    top: -10px;
+    background-image: linear-gradient(#FFFCF6, #FFFFFF);
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var( --main-maroon);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Add-child-section .child-fields4 input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    background-color: transparent;
+}
+
+.Add-child-section .child-fields5 {
+    width: 49%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+}
+
+.Add-child-section .child-fields5::before {
+    position: absolute;
+    content: "Street or Road";
+    top: -10px;
+    background-image: linear-gradient(#FFFCF6, #FFFFFF);
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var( --main-maroon);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Add-child-section .child-fields5 input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    background-color: transparent;
+}
+
+.Add-child-section .child-fields6 {
+    width: 49%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+}
+
+.Add-child-section .child-fields6::before {
+    position: absolute;
+    content: "Town or City";
+    top: -10px;
+    background-image: linear-gradient(#FFFCF6, #FFFFFF);
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var( --main-maroon);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Add-child-section .child-fields6 input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    background-color: transparent;
+}
+
+.Add-child-section .child-fields7 {
+    width: 49%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+}
+
+.Add-child-section .child-fields7::before {
+    position: absolute;
+    content: "Pin Code";
+    top: -10px;
+    background-image: linear-gradient(#FFFCF6, #FFFFFF);
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var( --main-maroon);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Add-child-section .child-fields7 input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    background-color: transparent;
+}
+
+.Add-child-section .child-fields8 {
+    width: 49%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+}
+
+.Add-child-section .child-fields8::before {
+    position: absolute;
+    content: "Contact Number";
+    top: -10px;
+    background-image: linear-gradient(#FFFCF6, #FFFFFF);
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var( --main-maroon);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Add-child-section .child-fields8 input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    background-color: transparent;
+}
+
+.Add-child-section .child-fields9 {
+    width: 49%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+}
+
+.Add-child-section .child-fields9::before {
+    position: absolute;
+    content: "Email Address";
+    top: -10px;
+    background-image: linear-gradient(#FFFCF6, #FFFFFF);
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var( --main-maroon);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Add-child-section .child-fields9 input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    background-color: transparent;
+}
+
+.Add-child-section .child-fields10 {
+    width: 49%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+}
+
+.Add-child-section .child-fields10::before {
+    position: absolute;
+    content: "Mode Of Payment";
+    top: -10px;
+    background-image: linear-gradient(#FFFCF6, #FFFFFF);
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var( --main-maroon);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Add-child-section .child-fields10 input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    background-color: transparent;
+}
+
+.Add-child-section .Address-field {
+    width: 49%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+}
+
+.Add-child-section .Address-field input {
+    color: #000000;
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+}
+
+.Add-child-section .Address-field::before {
+    position: absolute;
+    content: "Country Name";
+    top: -10px;
+    background-image: linear-gradient(#FFFCF6, #FFFFFF);
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var( --main-maroon);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Add-child-section .child-dob p {
+    font-size: 25px;
+    font-weight: 700;
+    color: var( --main-maroon);
+}
+
+.Add-child-section .dob-fields {
+    margin-top: 20px;
+    width: 60%;
+    height: 55px;
+    border: 1px solid var( --main-maroon);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    padding-right: 30px;
+    position: relative;
+    box-shadow: 2px 2px 2px rgb(185, 184, 184);
+    display: flex;
+    justify-content: space-between;
+}
+
+.Add-child-section .dob-fields span svg {
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+}
+
+.Add-child-section .dob-fields input {
+    color: #000000;
+    font-weight: 700;
+    width: 80%;
+    background-color: transparent;
+}
+
+.child-register-btn {
+    padding-top: 5px;
+}
+
+.child-register-btn p,
+.child-register-btn button {
+    width: 550px;
+    height: 60px;
+    background-color: var( --main-maroon);
+    box-shadow: 0px 0px 4px #615f5f;
+    line-height: 60px;
+    color: #FFFFFF;
+    margin-left: auto;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: 600;
+    border: none;
+}
+
+.Add-child-section .Address-field textarea {
+    display: none;
+}
+
+@media screen and (max-width: 794px) {
+
+
+    .child-register-btn p {
+        width: 100%;
+    }
+
+    .edit-detail-field .child-heading-t {
+        margin-bottom: 25px;
+    }
+
+    .edit-detail-field .child-detail-inner {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0px;
+        justify-content: unset;
+    }
+
+    .child-fields,
+    .child-fields1,
+    .child-fields3 {
+        width: 100% !important;
+    }
+
+    .dob-fields {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 629px) {
+    .Add-child-section {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 409px) {
+    .Add-child-section {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width:628px) {
+    .appointments-section {
+        width: 100% !important;
+
+    }
+
+}
+
+.error-ms {
+    color: var( --main-maroon);
+    margin-bottom: 10px;
+}
+    </style>
+</header>
+
+<body>
+    
+                <div class="appointments-section">
+                    <div class="appointment-heading">
+                            <p class="appointment-head">CheckOut</p>
+                            <span class="appointment-line"></span>
+                        </div>
+                    <div class="inner-appointment">
+                
+                    <section class="edit-detail-field">
+                        <div class="Add-child-section">
+                            <form id="checkoutForm" action="payment_success.php" method="POST" novalidate>
+                            <div class="child-detail-inner">
+                              
+                                <div class="child-fields1">
+                                    <input type="text" name="first_name" placeholder="First Name" required>
+                                </div>
+                                <div class="child-fields3">
+                                    <input type="text" name="last_name" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                            <div class="child-detail-inner">
+                              
+                                <div class="child-fields child-fields4">
+                                    <input type="text" name="house" placeholder="123" required>
+                                </div>
+                                <div class="child-fields child-fields5 ">
+                                    <input type="text" name="street" placeholder="Street" required>
+                                </div>
+                            </div>
+                            <div class="child-detail-inner">
+                              
+                                <div class="child-fields child-fields6">
+                                    <input type="text" name="city" placeholder="State/ City" required>
+                                </div>
+                                <div class="child-fields child-fields7 ">
+                                    <input type="text" name="pincode" placeholder="123456" required pattern="\d{3,10}">
+                                </div>
+                            </div>
+                            <div class="child-detail-inner">
+                              
+                                <div class="child-fields Address-field">
+                                    <input type="text" name="country" placeholder="India" required>   
+                                </div>
+                                <div class="child-fields child-fields8">
+                                    <input type="text" name="contact" placeholder="12345 67891" required>
+                                </div>
+                            </div>
+                            <div class="child-detail-inner">
+                              
+                                <div class="child-fields child-fields9">
+                                    <input type="email" name="email" placeholder="example@email.com" required>
+                                </div>
+                                <div class="child-fields child-fields10">
+                                    <input type="text" name="payment_method" value="Cash On Delivery" readonly required>
+                                </div>
+
+                            </div>
+                         
+                            <div class="child-register-btn">
+                                <span class="error-ms" id="errorMs"></span>
+                                <button type="submit" id="proceedBtn" name="proceed_pay">Proceed to Pay</button>
+                            </div>
+                            </form>
+
+                            </div>
+                        </div>
+                    </section>
+                    </div>              
+            </div>
+            <script src="./js/payment.js"></script>
+            <script>
+                (function(){
+                    const form = document.getElementById('checkoutForm');
+                    const errorEl = document.getElementById('errorMs');
+                    const submitBtn = document.getElementById('proceedBtn');
+
+                    function setError(msg) {
+                        if (!errorEl) return;
+                        errorEl.style.color = 'var(--main-maroon)';
+                        errorEl.textContent = msg;
+                    }
+
+                    function clearError() {
+                        if (!errorEl) return;
+                        errorEl.textContent = '';
+                    }
+
+                    function validateEmail(email) {
+                        return /^\S+@\S+\.\S+$/.test(email);
+                    }
+
+                    form.addEventListener('submit', function(e){
+                        clearError();
+
+                        // HTML5 validation: check all required fields
+                        const requiredFields = form.querySelectorAll('[required]');
+                        for (let field of requiredFields) {
+                            if (!field.value || field.value.trim() === '') {
+                                e.preventDefault();
+                                setError('Please fill all required fields.');
+                                field.focus();
+                                return false;
+                            }
+                        }
+
+                        // email validation
+                        const email = form.querySelector('input[type="email"]');
+                        if (email && !validateEmail(email.value.trim())) {
+                            e.preventDefault();
+                            setError('Please enter a valid email address.');
+                            email.focus();
+                            return false;
+                        }
+
+                        // pincode pattern (if present)
+                        const pincode = form.querySelector('input[name="pincode"]');
+                        if (pincode && pincode.pattern) {
+                            const re = new RegExp(pincode.pattern);
+                            if (!re.test(pincode.value.trim())) {
+                                e.preventDefault();
+                                setError('Please enter a valid pin code.');
+                                pincode.focus();
+                                return false;
+                            }
+                        }
+
+                        // optional: allow external paymentCheckFields from /js/payment.js to veto
+                        if (typeof window.paymentCheckFields === 'function') {
+                            const allowed = window.paymentCheckFields([]);
+                            if (!allowed) {
+                                e.preventDefault();
+                                // Assume paymentCheckFields sets its own error message
+                                return false;
+                            }
+                        }
+
+                        // All good: give feedback and let the form submit
+                        if (submitBtn) {
+                            submitBtn.disabled = true;
+                            submitBtn.style.opacity = '0.6';
+                            submitBtn.textContent = 'Processing...';
+                        }
+
+                        return true;
+                    });
+
+                    // Improve UX: live validation to remove error message when user types
+                    form.addEventListener('input', function(){
+                        if (errorEl && errorEl.textContent) {
+                            clearError();
+                        }
+                    });
+                })();
+            </script>
+          
+</body>
+
+
+
+
+
+
+
+<?php require_once './includes/footer.php'; ?>
